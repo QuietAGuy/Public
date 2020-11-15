@@ -1,21 +1,12 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]; then
-	echo "Usage: ./testgit.sh Path"
-	exit 1
-fi
-
-Location=$1
+Location=LearnGit
 
 function setup() {
 	clear
 
-	cd $Location >/dev/null 2>&1
-
-	if [ $? -ne 0 ]; then
-		echo "Change to directory $Location failed!"
-		exit 1
-	fi
+	mkdir -p $Location
+	cd $Location
 
 	rm -rf BitBucketComputer
 	rm -rf LocalComputer
